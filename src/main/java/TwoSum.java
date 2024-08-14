@@ -21,10 +21,6 @@ public class TwoSum {
 		int[] ls2 = twoSum(nums2, 6);
 		List<Integer> list2 = Arrays.stream(ls2).boxed().collect(Collectors.toList());
 		System.out.println(list2);
-		
-		int[] ls3 = twoSum(nums3, 6);
-		List<Integer> list3 = Arrays.stream(ls3).boxed().collect(Collectors.toList());
-		System.out.println(list3);
 
 	}
 	
