@@ -12,7 +12,6 @@ public class TwoSum {
 		// TODO Auto-generated method stub
 		int nums1[] = new int[] {2,7,11,15};
 		int nums2[] = new int[] {3,2,4};
-		int nums3[] = new int[] {3,3};
 		
 		int[] ls1 = twoSum(nums1, 9);
 		List<Integer> list1 = Arrays.stream(ls1).boxed().collect(Collectors.toList());
