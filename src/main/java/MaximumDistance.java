@@ -6,16 +6,17 @@ public class MaximumDistance {
 		// TODO Auto-generated method stub
 		List ls = new ArrayList<Integer>();
 		List ls1 = new ArrayList<Integer>();
-//		ls1.add(1);
+		ls1.add(1);
 //		ls1.add(2);
 //		ls1.add(3);
-		ls1.add(4);
+//		ls1.add(4);
 		ls1.add(5);
 		
 		List ls2 = new ArrayList<Integer>();
-		ls2.add(1);
-		ls2.add(2);
+//		ls2.add(1);
+//		ls2.add(2);
 		ls2.add(3);
+		ls2.add(4);
 
 		
 		List ls3 = new ArrayList<Integer>();
@@ -25,7 +26,7 @@ public class MaximumDistance {
 		
 		ls.add(ls1);
 		ls.add(ls2);
-		ls.add(ls3);
+//		ls.add(ls3);
 		
 		
 		int value = maxDistance(ls);
@@ -36,25 +37,24 @@ public class MaximumDistance {
 	
 	public static int maxDistance(List<List<Integer>> arrays) {
 		
-		int smallest = arrays.get(0).get(0);
-        int biggest = arrays.get(0).get(arrays.get(0).size() - 1);
-        int maxDistance = 0;
-        
+		int maxDistance = 0, min = 0, max = 0;
+        List<Integer> list = new ArrayList<Integer>();
+       for (int i = 0; i < arrays.size(); i++) {
+       	
+       	Collections.sort(arrays.get(i));
+       	for(int j = 0 ; j<arrays.get(i).size(); j++ ) {
+               if(arrays.get(i).get(j) != 0)
+       		    list.add(arrays.get(i).get(j));
+       		
+       	}
 
-        for (int i = 1; i < arrays.size(); i++) {
-        	
-            maxDistance = Math.max(maxDistance, Math.abs(arrays.get(i).get(arrays.get(i).size() - 1) - smallest));
-            
-            maxDistance = Math.max(maxDistance, Math.abs(biggest - arrays.get(i).get(0)));
-            
-            smallest = Math.min(smallest, arrays.get(i).get(0));
-            
-            biggest = Math.max(biggest, arrays.get(i).get(arrays.get(i).size() - 1));
-            
-            
-        }
+       }
+       Collections.sort(list);
+       max = list.get(list.size()-1);
+       min = list.get(0);
+       maxDistance = max-min;
 
-        return maxDistance;
+       return maxDistance;
 		
 	}
 
